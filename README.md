@@ -1,7 +1,7 @@
 # harness-evolve
 
-> A Claude Code skill that lets an Agent workspace improve itself in one pass: track the frontier, read it, audit the system, act within risk tiers.
-> 一个让 Agent workspace 自我进化的 Claude Code skill——一次运行走完"追踪前沿 → 精读 → 系统自检 → 分级执行"整条闭环。
+> An Agent Skill (SKILL.md format) that lets an Agent workspace improve itself in one pass: track the frontier, read it, audit the system, act within risk tiers.
+> 一个让 Agent workspace 自我进化的 Agent Skill（SKILL.md 格式）——一次运行走完"追踪前沿 → 精读 → 系统自检 → 分级执行"整条闭环。跑在 Claude Code 里，但不是 Claude Code 专属——任何实现了 SKILL.md 加载约定的 harness 都能用。
 
 `harness-evolve` turns your agent's harness (its config files, routing rules, memory layout, persona docs — whatever decides its runtime behavior) from something that only gets touched when it breaks, into something that gets reviewed and improved on a schedule.
 
@@ -21,11 +21,13 @@ Earlier iterations split this into two skills — one that only researched, one 
 
 ## Install
 
+For Claude Code:
+
 ```bash
 git clone https://github.com/AgentGameLab/harness-evolve.git ~/.claude/skills/harness-evolve
 ```
 
-Claude Code auto-discovers the skill from its `SKILL.md` front-matter.
+Claude Code auto-discovers the skill from its `SKILL.md` front-matter. Any other harness that reads the same SKILL.md convention (OpenClaw included) can load it from its own skills directory the same way.
 
 ## Use
 
